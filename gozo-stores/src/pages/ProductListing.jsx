@@ -27,7 +27,7 @@ export default function ProductListing() {
 
                         {loading? <p> Loading Products </p> : 
                             <div class="normal-products">
-                                {products.map((item) => <Card name={item.name} src={item.src} price={item.finalPrice} rating={item.rating} />)}
+                                {products.map(({name, src, finalPrice, rating}) => <Card name={name} src={src} price={finalPrice} rating={rating} />)}
                             </div> 
                         }
                 
