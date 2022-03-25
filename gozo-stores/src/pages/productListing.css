@@ -1,0 +1,71 @@
+/* SIDEBAR */
+
+.product-listing-page {
+    display: flex;
+}
+
+.filters-sidebar {
+    padding: 2rem 1rem;
+    width: 14rem;
+    height: 100%;
+    position: sticky;
+    flex-shrink: 0;
+    top: 0;
+}
+
+.sidebar-title {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.sidebar-title .right {
+    margin-left: auto;
+}
+
+.all-filters {
+    gap: 2rem;
+}
+
+.filter span {
+    height: 1.5rem;
+}
+
+.filter label {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+#price label {
+    margin-bottom: 1rem;
+}
+
+#slider {
+    width: 100%;
+}
+
+/* LISTED PRODUCTS */
+
+.product-listing-area {
+    margin: 3rem 2rem;
+}
+
+.heading {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.listed-products {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.normal-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+}

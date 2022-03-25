@@ -1,0 +1,104 @@
+@import url("https://gozo-ui.netlify.app/CSS/style.css");
+
+body {
+    background-color: var(--gray);
+    color: var(--text-gray);
+}
+
+.navbar-links {
+    margin: 0rem 1rem 0rem 1rem;
+}
+
+.searchbar {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--gray) ;
+    padding: 0.5rem 0.75rem;
+    border-radius: 7rem;
+    margin-right: 1rem;
+}
+
+.searchbar input {
+    border: none;
+    background-color: var(--gray);
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.badge {
+    font-size: small;
+    margin: 0%;
+    padding: 0%;
+}
+
+.shadow {
+    filter: drop-shadow(0 0 0.25rem #3333337a);
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-action * {
+    align-items: center;
+}
+
+.product-name {
+    font-weight: bold;
+}
+
+.product-image {
+    max-width: 10rem;
+}
+
+.product-image-container {
+    height: 15rem;
+}
+
+.normal-products .product-card {
+    height: 24rem;
+    justify-content: space-between;
+}
+
+.product-card.product-horizontal {
+    width: 27rem;
+    height: 15rem;
+}
+
+.sidekick-card .product-card {
+    background-color: #dfdfdf;
+    min-width: 25rem;
+    max-width: 34rem;
+    color: var(--text-gray);
+}
+
+.sidekick-card .product-image-container {
+    width: 50%;
+    padding: 3rem;
+}
+
+.sidekick-card .product-image {
+    min-width: 122px;
+}
+
+.sidekick-card .product-header {
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+
+.sidekick-card a {
+    text-decoration: none;
+}
+
+.product-offer {
+    font-weight: bold;
+}
