@@ -4,6 +4,8 @@ export default function FiltersSidebar() {
 
     const {dispatch, state} = useFilter()
 
+    const rating = [4,3,2,1]
+
     return (
         <aside class="filters-sidebar flex-col bg-white">
 
@@ -46,14 +48,11 @@ export default function FiltersSidebar() {
                 <div class="filter" id="rating">
                     <div class="rating-radio-button flex-col">
                         <label>Rating</label>
-                        <span><input type="radio" name="rating" value="4" 
-                        onChange={(e) => dispatch({type: "RATING", payload: e.target.value})}/>4+</span>
-                        <span><input type="radio" name="rating" value="3" 
-                        onChange={(e) => dispatch({type: "RATING", payload: e.target.value})}/>3+</span>
-                        <span><input type="radio" name="rating" value="2" 
-                        onChange={(e) => dispatch({type: "RATING", payload: e.target.value})}/>2+</span>
-                        <span><input type="radio" name="rating" value="1"
-                        onChange={(e) => dispatch({type: "RATING", payload: e.target.value})}/>1+</span>
+                        {rating.map((item) => {
+                            return (
+                                <span><input type="radio" name="rating" value={item} onChange={(e) => dispatch({type: "RATING", payload: e.target.value})}/>{item}+</span>
+                            )
+                        })}
                     </div>
                 </div>
 
