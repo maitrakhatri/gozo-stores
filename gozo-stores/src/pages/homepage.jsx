@@ -17,6 +17,7 @@ export default function Homepage() {
     }
 
     useEffect(() => {
+        dispatch({type: "CLEAR"});
         getCategories();
     },[])
 
