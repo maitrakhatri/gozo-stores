@@ -31,7 +31,8 @@ export default function FiltersSidebar() {
                     <div class="category-checkbox flex-col">
                         <label>Category</label><br />
 
-                        <span><input type="checkbox" name="category" value="marvel" onChange={(e) => dispatch({type: "ADD-CAT", payload: e.target.value, status: e.target.checked})}  />Marvel</span>
+                        <span><input type="checkbox" name="category" value="marvel"
+                        onChange={(e) => dispatch({type: "ADD-CAT", payload: e.target.value, status: e.target.checked})}  />Marvel</span>
 
                         <span><input type="checkbox" name="category" value="dc"
                         onChange={(e) => dispatch({type: "ADD-CAT", payload: e.target.value, status: e.target.checked})}  />DC</span>

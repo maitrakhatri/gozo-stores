@@ -1,0 +1,84 @@
+@import url("../universalStyles.css");
+
+.homepage main {
+    display: flex;
+    flex-direction: column;
+    margin: 2.5rem 5rem;
+    row-gap: 3rem;
+}
+
+.homepage main > * {
+    width: 100%;
+}
+
+.homepage main a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.homepage .category {
+    display: grid;
+    place-content: center;
+    position: relative;
+    width: fit-content;
+}
+  
+.homepage .fade {
+    z-index: 1;
+    position: absolute;
+    background-color: #fff;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    opacity: 25%;
+}
+  
+.homepage .cat-name {
+    z-index: 2;
+    position: absolute;
+    background-color: #fff;
+    place-self: center;
+    width: 100%;
+    text-align: center;
+    padding: 0.25rem;
+}
+
+.homepage .cat-catlog .category img {
+    width: 14rem;
+    aspect-ratio: 16 / 9;
+}
+
+.homepage .cat-catlog a  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+    place-items: center;
+}
+
+.homepage .sidekick {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+}
+
+.homepage .product-card {
+    background-color: #dfdfdf;
+    min-width: 25rem;
+    max-width: 34rem;
+}
+
+.homepage .product-image-container {
+    width: 50%;
+    padding: 3rem;
+}
+
+.homepage .product-image {
+    min-width: 122px;
+}
+
+.homepage .product-header {
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
