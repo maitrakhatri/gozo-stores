@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import { useProduct } from "./product-context";
-import {getCatogriedProducts,getRatedProducts, getPricedProducts, getSortedProducts} from "../utils/functions" 
+import {getCatogriedProducts,getRatedProducts, getPricedProducts, getSortedProducts} from "../utils/filters" 
 import { filterReducer } from "../reducer/filter-reducer";
 
 const FilterContext = createContext()
