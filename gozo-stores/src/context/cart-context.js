@@ -14,7 +14,6 @@ function CartProvider({children}) {
             authorization: token
           }
         })
-        console.log(res.data.cart)
         setMyCart(res.data.cart)
       }
   
@@ -31,7 +30,6 @@ function CartProvider({children}) {
             }
           })
           setMyCart(res.data.cart)
-          console.log(res.data.cart)
         }
       
         catch(err) {
@@ -50,7 +48,6 @@ function CartProvider({children}) {
             authorization: token
           }
         })
-        console.log(res.data.cart)
         setMyCart(res.data.cart)
       }
     
