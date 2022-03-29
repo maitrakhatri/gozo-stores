@@ -1,4 +1,4 @@
-export default function Card(props) {
+export function Card(props) {
     return (
 
         <div className="card-component">

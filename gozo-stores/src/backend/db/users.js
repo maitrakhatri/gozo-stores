@@ -17,34 +17,3 @@ export const users = [
     updatedAt: formatDate(),
   },
 ];
-
-/**
-  {
-    "email": "adarshbalika@gmail.com",
-    "password": "adarshBalika123"
-  }
-
-  adarshBalika's ecoded token:
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIzOTU2MzhkOS04ODlmLTRjOGEtOGM2YS1lOGFkOWM0NTRkYmYiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20iLCJpYXQiOjE2NDc5NTMwMTN9.oeF0cYbTXmZsyt-vn1gZPt2gX-NnKPnWCIbn09a9T2c"
-
-  {
-    "firstName": "Maitra",
-    "lastName": "Khatri",
-    "email": "maitrakhatri@gmail.com",
-    "password": "Asdf1234"
-  }
-
-{
-  "cart": [
-    {
-    "name": `Thor Ragnarok`,
-    "src": "../../assets/images/posters/thor-ragnarok.png",
-    "ogPrice": 2500,
-    "discount": "50%",
-    "finalPrice": 1250,
-    "categoryName": "marvel",
-    "rating": 1.8
-    }
-  ]
-}
- */

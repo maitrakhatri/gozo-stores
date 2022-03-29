@@ -1,13 +1,11 @@
-import "./homepage.css"
-import Thumbnail from "../components/Thumbnail";
+import "./css/homepage.css"
 import axios from "axios"
-import Navbar from "../components/Navbar"
 import { useEffect, useState } from "react";
-import Sidekick from "../components/SidekickCard";
 import { useFilter } from "../context/filter-context";
 import { Link } from "react-router-dom";
+import { Thumbnail, Navbar, Sidekick } from "../components";
 
-export default function Homepage() {
+export function Homepage() {
 
     const [categories, setCategories] = useState([])
 

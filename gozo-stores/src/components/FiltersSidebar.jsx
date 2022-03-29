@@ -1,6 +1,6 @@
 import { useFilter } from "../context/filter-context"
 
-export default function FiltersSidebar() {
+export function FiltersSidebar() {
 
     const {dispatch, state} = useFilter()
 
