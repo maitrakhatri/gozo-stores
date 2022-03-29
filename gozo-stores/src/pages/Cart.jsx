@@ -29,7 +29,7 @@ export function Cart() {
               <div className="cart">
                   <div className="cart-item">
 
-                      {myCart.map(({name, src, ogPrice, finalPrice, qty, _id}) => <HorizontalCard name={name} src={src} ogPrice={ogPrice} finalPrice={finalPrice} quantity={qty} productId={_id} />)}
+                      {myCart.map((product) => <HorizontalCard name={product.name} src={product.src} ogPrice={product.ogPrice} finalPrice={product.finalPrice} quantity={product.qty} productId={product._id} product={product} />)}
                       
                   </div>
               </div>

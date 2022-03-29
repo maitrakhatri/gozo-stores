@@ -1,9 +1,11 @@
 import { token } from "../utils/token"
 import { useCart } from "../context/cart-context"
+import { useWishlist } from "../context/wishlist-context"
 
 export function HorizontalCard(props) {
 
     const {deleteFromCart, updateCartQuantity} = useCart()
+    const {addToWishlist} = useWishlist()
     
     return (
 
@@ -42,7 +44,7 @@ export function HorizontalCard(props) {
             
                 <div class="product-action">
                     <button class="btn btn-yellow" onClick={() => deleteFromCart(token, props.productId)}>Remove from Cart</button>
-                    <button class="btn btn-outline-lightblue">Move to Wishlist</button>
+                    <button class="btn btn-outline-lightblue" onClick={() => addToWishlist(token, props.product)}>Add to Wishlist</button>
                 </div>
             </div>
         </div>

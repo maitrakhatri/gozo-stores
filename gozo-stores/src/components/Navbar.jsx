@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/cart-context";
+import { useWishlist } from "../context/wishlist-context";
 
 export function Navbar() {
 
     const {myCart} = useCart()
+    const {myWishlist} = useWishlist()
 
     return (
         <div className="Navbar">
@@ -23,7 +25,7 @@ export function Navbar() {
                     </span>
                     <div class="icon-with-badge">
                         <Link to="/wishlist" ><img class="icon" src="../../assets/icons/heart-outline.png" alt="wishlist" />
-                        <span class="badge bg-lightblue">9</span>
+                        <span class="badge bg-lightblue">{myWishlist.length}</span>
                         </Link>
                     </div>
                     <div class="icon-with-badge">
