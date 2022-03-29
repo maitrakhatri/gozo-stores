@@ -27,8 +27,7 @@ export function Card(props) {
                         <button class="btn btn-yellow" onClick={() => {
 
                             //checks if product is already present in Cart
-                            //if yes then show GO TO CART button and
-                            //on click redirect to CART page
+                            //if yes then redirect to CART page
                             //if not then adds product to cart and
                             //instantly shows GOT TO CART button
                             if(productInCart(myCart, props.productId)) {
