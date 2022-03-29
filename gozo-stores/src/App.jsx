@@ -1,6 +1,5 @@
 import "./universalStyles.css"
-import Homepage from "./pages/Homepage"
-import ProductListing from "./pages/ProductListing"
+import { Homepage, ProductListing } from "./pages";
 import { Route, Routes } from "react-router-dom";
 
 function App() {

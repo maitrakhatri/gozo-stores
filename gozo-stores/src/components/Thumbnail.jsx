@@ -1,6 +1,6 @@
 import "./thumbnail.css"
 
-export default function Thumbnail(props) {
+export function Thumbnail(props) {
     return (
         
         <div class="category" onClick={props.onClick}>

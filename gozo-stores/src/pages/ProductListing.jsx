@@ -1,11 +1,9 @@
-import Card from "../components/Card";
-import Navbar from "../components/Navbar"
-import FiltersSidebar from "../components/FiltersSidebar";
-import "./productListing.css"
+import "./css/productListing.css"
 import { useFilter } from "../context/filter-context"
 import { useProduct } from "../context/product-context";
+import { Card, Navbar, FiltersSidebar } from "../components";
 
-export default function ProductListing() {
+export function ProductListing() {
 
     const {loading} = useProduct()
     const {filteredProducts} = useFilter()

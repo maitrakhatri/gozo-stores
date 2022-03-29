@@ -1,4 +1,4 @@
-export default function HorizontalCard(props) {
+export function HorizontalCard(props) {
     return (
 
         <div class="product-card product-horizontal bg-white">

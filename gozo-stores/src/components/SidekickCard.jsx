@@ -1,4 +1,4 @@
-export default function Sidekick(props) {
+export function Sidekick(props) {
     return (
         <div className="sidekick-card">
             <a href=""><div class="product-card product-horizontal">
