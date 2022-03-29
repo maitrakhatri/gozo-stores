@@ -1,5 +1,5 @@
 import "./universalStyles.css"
-import { Homepage, ProductListing, Cart } from "./pages";
+import { Homepage, ProductListing, Cart, LogIn, SignUp } from "./pages";
 import { Route, Routes } from "react-router-dom";
 import { Wishlist } from "./pages/Wishlist";
 
@@ -13,6 +13,8 @@ function App() {
         <Route path="/products" element={<ProductListing />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
 
     </div>
