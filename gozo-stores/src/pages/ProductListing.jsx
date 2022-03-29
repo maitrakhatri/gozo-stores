@@ -8,7 +8,6 @@ export function ProductListing() {
     const {loading} = useProduct()
     const {filteredProducts} = useFilter()
 
-
     return (
         <div className="productListingPage">
 
@@ -28,7 +27,7 @@ export function ProductListing() {
 
                         {loading? <p> Loading Products </p> : 
                             <div class="normal-products">
-                                {filteredProducts.map((item) => <Card name={item.name} src={item.src} price={item.finalPrice} rating={item.rating} />)}
+                                {filteredProducts.map((item) => <Card product={item} name={item.name} src={item.src} price={item.finalPrice} rating={item.rating} productId={item._id} />)}
                             </div> 
                         }
                 
