@@ -1,15 +1,21 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useCart } from "../context/cart-context"
+import { useWishlist } from "../context/wishlist-context"
 import {token} from "../utils/token"
+import { Like } from "./Like"
 
 export function Card(props) {
 
-    const {addToCart, myCart, updateCartQuantity} = useCart()
+    const {addToCart, myCart} = useCart()
     const [buttonStatus, setButtonStatus] = useState("Add to Cart")
     const navigate = useNavigate()
 
     const productInCart = (myCart, productId) => myCart.some((ele) => ele._id === productId)
+
+    const {addToWishlist, deleteFromWishlist} = useWishlist()
+
+    const [likeStatus, setLikeStatus] = useState(props.likeStatus ?? false)
 
     return (
 
@@ -18,7 +24,17 @@ export function Card(props) {
             <div class="product-card bg-white">
                 <div class="product-image-container">
                     <img class="product-image" src={props.src} alt={props.name} />
-                    <span class="like-product bg-gray"><img src="../../assets/icons/heart-outline.png" alt="like" /></span> 
+
+                    <Like active={likeStatus} onClick={() => {
+                        if(likeStatus) {
+                            deleteFromWishlist(token, props.productId)
+                            setLikeStatus(false)
+                        }
+                        else {
+                            addToWishlist(token, props.product)
+                            setLikeStatus(true)
+                        }
+                    } } />
                 </div>
                 <div class="product-card-body">
                     <div class="product-name"> {props.name} <span>({props.rating})</span></div>

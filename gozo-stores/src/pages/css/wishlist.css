@@ -1,0 +1,22 @@
+.wishlist main {
+    margin: 2.5rem 5rem;
+}
+
+.wishlist .wishlist-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.wishlist .liked-products {
+    margin: 5rem 3rem 0rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.wishlist .product-card:hover {
+    filter: drop-shadow(0 0 0.25rem #3333337a);
+}

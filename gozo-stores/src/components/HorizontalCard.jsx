@@ -1,9 +1,16 @@
 import { token } from "../utils/token"
 import { useCart } from "../context/cart-context"
+import { useWishlist } from "../context/wishlist-context"
+import { useNavigate } from "react-router-dom"
 
 export function HorizontalCard(props) {
 
     const {deleteFromCart, updateCartQuantity} = useCart()
+    const {addToWishlist, myWishlist} = useWishlist()
+
+    const productInWishlist = (myWishlist, productId) => myWishlist.some((ele) => ele._id === productId)
+
+    const navigate = useNavigate()
     
     return (
 
@@ -42,7 +49,16 @@ export function HorizontalCard(props) {
             
                 <div class="product-action">
                     <button class="btn btn-yellow" onClick={() => deleteFromCart(token, props.productId)}>Remove from Cart</button>
-                    <button class="btn btn-outline-lightblue">Move to Wishlist</button>
+                    <button class="btn btn-outline-lightblue" onClick={() => {
+                        if(productInWishlist(myWishlist, props.productId)) {
+                            deleteFromCart(token, props.productId)
+                            navigate('/wishlist')
+                        }
+                        else {
+                            addToWishlist(token, props.product)
+                            deleteFromCart(token, props.productId)
+                        }
+                    }}>Move to Wishlist</button>
                 </div>
             </div>
         </div>
