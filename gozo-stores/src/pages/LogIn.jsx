@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import { Navbar } from "../components";
 import "./css/auth.css"
+import { useEffect } from "react"
 
 export function LogIn() {
+
+    useEffect(() => {
+        document.title = "LogIn | gozo Stores";
+    },[])
+
     return (
         <div className="login auth">
             <Navbar />

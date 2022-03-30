@@ -19,6 +19,10 @@ export function Cart() {
         setTotalOGPrice(myCart.reduce(totalOGPriceReducer,0))
     }, [myCart])
 
+    useEffect(() => {
+        document.title = "Cart | gozo Stores";
+    },[])
+
     return (
         <div className="cart-page">
 

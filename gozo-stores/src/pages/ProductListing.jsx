@@ -3,6 +3,7 @@ import { useFilter } from "../context/filter-context"
 import { useProduct } from "../context/product-context";
 import { Card, Navbar, FiltersSidebar } from "../components";
 import { useWishlist } from "../context/wishlist-context";
+import { useEffect } from "react"
 
 export function ProductListing() {
 
@@ -11,6 +12,10 @@ export function ProductListing() {
     const {myWishlist} = useWishlist()
 
     const productInWishlist = (myWishlist, productId) => myWishlist.some((ele) => ele._id === productId)
+
+    useEffect(() => {
+        document.title = "Products | gozo Stores";
+    },[])
 
     return (
         <div className="productListingPage">

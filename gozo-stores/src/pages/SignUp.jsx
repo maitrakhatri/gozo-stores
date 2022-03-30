@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom"
 import { Navbar } from "../components"
 import "./css/auth.css"
+import { useEffect } from "react"
 
 export function SignUp() {
+
+    useEffect(() => {
+        document.title = "SignUp | gozo Stores";
+    },[])
+
     return(
         <div className="signup auth">
             <Navbar />
