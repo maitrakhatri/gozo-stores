@@ -6,6 +6,10 @@ export function FiltersSidebar() {
 
     const rating = [4,3,2,1]
 
+    const isSelected = (categoriesArray, category) => {
+        return categoriesArray.includes(category)
+    }
+
     return (
         <aside class="filters-sidebar flex-col bg-white">
 
@@ -31,16 +35,19 @@ export function FiltersSidebar() {
                     <div class="category-checkbox flex-col">
                         <label>Category</label><br />
 
-                        <span><input type="checkbox" name="category" value="marvel"
+                        <span><input type="checkbox" name="category" value="marvel" checked={isSelected(state.categories, "marvel")}
                         onChange={(e) => dispatch({type: "ADD-CAT", payload: e.target.value, status: e.target.checked})}  />Marvel</span>
 
                         <span><input type="checkbox" name="category" value="dc"
+                        checked={isSelected(state.categories, "dc")}
                         onChange={(e) => dispatch({type: "ADD-CAT", payload: e.target.value, status: e.target.checked})}  />DC</span>
 
                         <span><input type="checkbox" name="category" value="dceu"
+                        checked={isSelected(state.categories, "dceu")}
                         onChange={(e) => dispatch({type: "ADD-CAT", payload: e.target.value, status: e.target.checked})}  />DCEU </span>
                         
                         <span><input type="checkbox" name="category" value="others"
+                        checked={isSelected(state.categories, "others")}
                         onChange={(e) => dispatch({type: "ADD-CAT", payload: e.target.value, status: e.target.checked})}  />Others </span>
 
                     </div>

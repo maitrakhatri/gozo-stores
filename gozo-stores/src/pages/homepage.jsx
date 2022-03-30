@@ -21,6 +21,10 @@ export function Homepage() {
 
     const {dispatch} = useFilter()
 
+    useEffect(() => {
+        document.title = "Home | gozo Stores";
+    },[])
+
     return (
         <div className="homepage">
 

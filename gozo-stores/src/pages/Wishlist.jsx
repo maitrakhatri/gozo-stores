@@ -1,10 +1,15 @@
 import "./css/wishlist.css"
 import {Navbar, Card} from "../components"
 import { useWishlist } from "../context/wishlist-context"
+import { useEffect } from "react"
 
 export function Wishlist() {
 
     const {myWishlist} = useWishlist()
+
+    useEffect(() => {
+        document.title = "Wishlist | gozo Stores";
+    },[])
 
     return (
         <div className="wishlist">
