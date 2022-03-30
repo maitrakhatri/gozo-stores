@@ -1,0 +1,69 @@
+.cart-page main {
+    margin: 2.5rem 5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cart-page .product-card .product-card-body {
+    justify-content: flex-start;
+}
+
+.cart-page .product-action {
+    margin-top: auto;
+}
+
+.cart-page .product-offer {
+    font-weight: bold;
+}
+
+.cart-page .cart {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.cart-page .card {
+    border: none;
+    padding: 1rem;
+}
+
+.cart-page .place-order .price-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-page .price-details-items {
+    display: flex;
+}
+
+.cart-page .card-body * {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.cart-page .pdi-price {
+    margin-left: auto;
+}
+
+.cart-page .total-amount {
+    font-weight: bold;
+    border-top: 1px solid var(--text-gray);
+    border-bottom: 1px solid var(--text-gray);
+}
+
+.cart-page .place-order .card .card-body .side-msg {
+    margin-top: 1rem;
+}
+
+.cart-page .place-order .card .card-body button {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.cart-page .product-horizontal {
+    margin: 2rem;
+}
+
+.cart-page .product-horizontal .product-quantity * {
+    margin: 0.5rem;
+}
