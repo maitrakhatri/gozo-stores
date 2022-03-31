@@ -30,6 +30,7 @@ export function Homepage() {
             <Navbar />
 
             <main>
+                <h5 className="text-center">You're one stop solution to Premium Superhero Posters</h5>
                 <div class="cat-catlog">
 
                     <Link to="/products">

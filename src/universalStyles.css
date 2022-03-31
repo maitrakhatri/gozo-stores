@@ -110,3 +110,7 @@ body {
 .product-card:hover {
     filter: drop-shadow(0 0 0.25rem #3333337a);
 }
+
+h5.text-center {
+    font-weight: 400;
+}

@@ -17,12 +17,12 @@ export function Navbar() {
                 <div class="navbar-links">
     
                     <Link to="/products" ><button class="btn btn-lightblue">All Products</button> </Link>
-                    <span class="searchbar">
+                    {/* <span class="searchbar">
                         <span class="input-group">
                             <input type="text" placeholder="find your product" />
                         </span>
                         <img class="icon" src="../../assets/icons/search.png" alt="search" />
-                    </span>
+                    </span> */}
                     <div class="icon-with-badge">
                         <Link to="/wishlist" ><img class="icon" src="../../assets/icons/heart-outline.png" alt="wishlist" />
                         <span class="badge bg-lightblue">{myWishlist.length}</span>
