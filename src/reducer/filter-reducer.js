@@ -17,7 +17,7 @@ export const filterReducer = (state, action) => {
                     categories: [...new Set(newCatArr)]
                 }
             }
-            if(!action.satus) {
+            else {
                 const newCatArr = state.categories.filter((item) => item !== action.payload)
                 return {
                     ...state,

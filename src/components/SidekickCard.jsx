@@ -1,7 +1,7 @@
 export function Sidekick(props) {
     return (
         <div className="sidekick-card">
-            <a href=""><div class="product-card product-horizontal">
+            <div class="product-card product-horizontal">
 
                 <div class="product-image-container">
                     <img class="product-image img-res" src={props.src} alt="sidekick product" />
@@ -14,7 +14,7 @@ export function Sidekick(props) {
                         <div class="product-desc text-s">{props.subtitle}</div>
                     </div>
                 </div>
-            </div></a>
+            </div>
         </div>
     )
 }

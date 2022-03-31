@@ -8,6 +8,7 @@ import { Thumbnail, Navbar, Sidekick } from "../components";
 export function Homepage() {
 
     const [categories, setCategories] = useState([])
+    const {dispatch} = useFilter()
 
     const getCategories = async () => {
         const res = await axios.get('/api/categories');
@@ -17,9 +18,7 @@ export function Homepage() {
     useEffect(() => {
         dispatch({type: "CLEAR"});
         getCategories();
-    },[])
-
-    const {dispatch} = useFilter()
+    },[dispatch])
 
     useEffect(() => {
         document.title = "Home | gozo Stores";
