@@ -30,3 +30,5 @@ E-commerce platform for Superhero fans for Premium Movie Posters.
 ![Screenshot 2022-03-31 at 22-26-54 Wishlist gozo Stores](https://user-images.githubusercontent.com/54719132/161124413-461c369a-6ac0-43df-9902-3fd7caf78b3b.png)
 ## Cart Page
 ![Screenshot 2022-03-31 at 22-29-58 Cart gozo Stores](https://user-images.githubusercontent.com/54719132/161124436-d4c2c74d-fb72-4320-bb26-8ef61e9061ea.png)
+# Demo
+https://user-images.githubusercontent.com/54719132/161125445-6b2f3fdb-3fc0-49de-a45b-a589cf3ddd61.mp4
