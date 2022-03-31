@@ -21,6 +21,8 @@
 
 .sidebar-title .right {
     margin-left: auto;
+    cursor: pointer;
+    color: #551A8B;
 }
 
 .all-filters {

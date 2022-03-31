@@ -30,7 +30,7 @@ export function LogIn() {
                             </div>
                             <div class="login-options">
                                 <input type="checkbox" name="TnC" id="remember-cred" />Remember me <br/>
-                                <a>Forgot your Password?</a>
+                                <span>Forgot your Password?</span>
                             </div>
                             <button class="btn btn-lightblue">Login</button>
                             <Link to="/signup"> Create New account </Link>

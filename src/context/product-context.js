@@ -15,10 +15,13 @@ function ProductProvider({children}) {
         setLoading(false)
     }*/
 
-    useEffect( async () => {
-        const res = await axios.get("/api/products")
-        setProducts(res.data.products)
-        setLoading(false)
+    useEffect(() => {
+        const getProducts = async () => {
+            const res = await axios.get("/api/products")
+            setProducts(res.data.products)
+            setLoading(false)
+        }
+        getProducts()
     }, [])
 
     return (
