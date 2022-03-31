@@ -16,7 +16,7 @@ export function FiltersSidebar() {
             <div class="sidebar-title">
 
                 <p>Filters</p>
-                <a href="" class="right" onClick={() => dispatch({type: "CLEAR"})}>Clear</a>
+                <span class="right" onClick={() => dispatch({type: "CLEAR"})}>Clear</span>
             </div>
 
             <div class="all-filters flex-col">

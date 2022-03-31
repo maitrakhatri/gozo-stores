@@ -9,13 +9,20 @@ function ProductProvider({children}) {
 
     const [loading, setLoading] = useState(true)
 
-    const getProducts = async () => {
+    /*const getProducts = async () => {
         const res = await axios.get("/api/products")
         setProducts(res.data.products)
         setLoading(false)
-    }
+    }*/
 
-    useEffect(getProducts, [])
+    useEffect(() => {
+        const getProducts = async () => {
+            const res = await axios.get("/api/products")
+            setProducts(res.data.products)
+            setLoading(false)
+        }
+        getProducts()
+    }, [])
 
     return (
         <ProductContext.Provider value={{products, loading}}>
