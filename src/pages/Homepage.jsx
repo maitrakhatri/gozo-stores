@@ -31,7 +31,7 @@ export function Homepage() {
 
             <main>
                 <h5 className="text-center">You're one stop solution to Premium Superhero Posters</h5>
-                <div class="cat-catlog">
+                <div className="cat-catlog">
 
                     <Link to="/products">
 
@@ -43,12 +43,12 @@ export function Homepage() {
 
                 <Link to="/products">
 
-                    <div class="hero">
-                        <img class="hero-image img-res" src="../../assets/images/thebatman-landscape.png" alt="hero-product" />
+                    <div className="hero">
+                        <img className="hero-image img-res" src="../../assets/images/thebatman-landscape.png" alt="hero-product" />
                     </div>
                 </Link>
 
-                <div class="sidekick">
+                <div className="sidekick">
 
                     <Link to="/products">
                         <Sidekick src="../../assets/images/thebatman-square.jpg" title="The Batman Solo Posters" subtitle="Hurry !! only 10 left" />

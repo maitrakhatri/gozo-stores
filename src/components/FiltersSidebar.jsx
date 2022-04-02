@@ -11,28 +11,28 @@ export function FiltersSidebar() {
     }
 
     return (
-        <aside class="filters-sidebar flex-col bg-white">
+        <aside className="filters-sidebar flex-col bg-white">
 
-            <div class="sidebar-title">
+            <div className="sidebar-title">
 
                 <p>Filters</p>
-                <span class="right" onClick={() => dispatch({type: "CLEAR"})}>Clear</span>
+                <span className="right" onClick={() => dispatch({type: "CLEAR"})}>Clear</span>
             </div>
 
-            <div class="all-filters flex-col">
+            <div className="all-filters flex-col">
 
-                <div class="filter flex-col" id="price">
+                <div className="filter flex-col" id="price">
                     <label for="slider">Price</label>
-                    <div class="slider">
+                    <div className="slider">
                         <input type="range" min="250" max="2000" step="50" value={state.priceRange} id="slider" onChange={(e) => dispatch({ type: "PRICE-RANGE", payload: e.target.value})} />
                     </div>
-                    <div class="price-amount">
+                    <div className="price-amount">
                         <p>{state.priceRange}</p>
                     </div>
                 </div>
 
-                <div class="filter" id="category">
-                    <div class="category-checkbox flex-col">
+                <div className="filter" id="category">
+                    <div className="category-checkbox flex-col">
                         <label>Category</label><br />
 
                         <span><input type="checkbox" name="category" value="marvel" checked={isSelected(state.categories, "marvel")}
@@ -53,8 +53,8 @@ export function FiltersSidebar() {
                     </div>
                 </div>
 
-                <div class="filter" id="rating">
-                    <div class="rating-radio-button flex-col">
+                <div className="filter" id="rating">
+                    <div className="rating-radio-button flex-col">
                         <label>Rating</label>
                         {rating.map((item) => {
                             return (
@@ -64,8 +64,8 @@ export function FiltersSidebar() {
                     </div>
                 </div>
 
-                <div class="filter" id="sort-by">
-                    <div class="sortby-radio-button flex-col">
+                <div className="filter" id="sort-by">
+                    <div className="sortby-radio-button flex-col">
                         <label>Sort-by</label>
                         <span><input type="radio" name="sortby" value="LOW-TO-HIGH"
                         onChange={(e) => dispatch({type: "SORT", payload: e.target.value})} />Price- Low to High</span>

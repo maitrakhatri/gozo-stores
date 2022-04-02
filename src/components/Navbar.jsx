@@ -10,30 +10,30 @@ export function Navbar() {
     return (
         <div className="Navbar">
 
-            <nav class="navbar bg-yellow">
-                <div class="navbar-header">
-                    <Link to="/" ><p class="navbar-header-title text-l text-gray">gozo Stores</p></Link>
+            <nav className="navbar bg-yellow">
+                <div className="navbar-header">
+                    <Link to="/" ><p className="navbar-header-title text-l text-gray">gozo Stores</p></Link>
                 </div>
-                <div class="navbar-links">
+                <div className="navbar-links">
     
-                    <Link to="/products" ><button class="btn btn-lightblue">All Products</button> </Link>
-                    {/* <span class="searchbar">
-                        <span class="input-group">
+                    <Link to="/products" ><button className="btn btn-lightblue">All Products</button> </Link>
+                    {/* <span className="searchbar">
+                        <span className="input-group">
                             <input type="text" placeholder="find your product" />
                         </span>
-                        <img class="icon" src="../../assets/icons/search.png" alt="search" />
+                        <img className="icon" src="../../assets/icons/search.png" alt="search" />
                     </span> */}
-                    <div class="icon-with-badge">
-                        <Link to="/wishlist" ><img class="icon" src="../../assets/icons/heart-outline.png" alt="wishlist" />
-                        <span class="badge bg-lightblue">{myWishlist.length}</span>
+                    <div className="icon-with-badge">
+                        <Link to="/wishlist" ><img className="icon" src="../../assets/icons/heart-outline.png" alt="wishlist" />
+                        <span className="badge bg-lightblue">{myWishlist.length}</span>
                         </Link>
                     </div>
-                    <div class="icon-with-badge">
-                        <Link to="/cart" ><img class="icon" src="../../assets/icons/cart-outline.png" alt="cart" />
-                        <span class="badge bg-lightblue">{myCart.length}</span>
+                    <div className="icon-with-badge">
+                        <Link to="/cart" ><img className="icon" src="../../assets/icons/cart-outline.png" alt="cart" />
+                        <span className="badge bg-lightblue">{myCart.length}</span>
                         </Link>
                     </div>
-                    <Link to="/login" ><button class="btn btn-lightblue">Log In</button> </Link>
+                    <Link to="/login" ><button className="btn btn-lightblue">Log In</button> </Link>
                 </div>
             </nav>
         </div>

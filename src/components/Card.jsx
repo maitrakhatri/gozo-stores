@@ -21,9 +21,9 @@ export function Card(props) {
 
         <div className="card-component">
 
-            <div class="product-card bg-white">
-                <div class="product-image-container">
-                    <img class="product-image" src={props.src} alt={props.name} />
+            <div className="product-card bg-white">
+                <div className="product-image-container">
+                    <img className="product-image" src={props.src} alt={props.name} />
 
                     <Like active={likeStatus} onClick={() => {
                         if(likeStatus) {
@@ -36,11 +36,11 @@ export function Card(props) {
                         }
                     } } />
                 </div>
-                <div class="product-card-body">
-                    <div class="product-name"> {props.name} <span>({props.rating})</span></div>
-                    <div class="product-price"> {props.price} INR </div>
-                    <div class="product-action">
-                        <button class="btn btn-yellow" onClick={() => {
+                <div className="product-card-body">
+                    <div className="product-name"> {props.name} <span>({props.rating})</span></div>
+                    <div className="product-price"> {props.price} INR </div>
+                    <div className="product-action">
+                        <button className="btn btn-yellow" onClick={() => {
 
                             //checks if product is already present in Cart
                             //if yes then redirect to CART page

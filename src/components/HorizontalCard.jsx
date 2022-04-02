@@ -14,22 +14,22 @@ export function HorizontalCard(props) {
     
     return (
 
-        <div class="product-card product-horizontal bg-white">
+        <div className="product-card product-horizontal bg-white">
 
-            <div class="product-image-container">
-                <img class="product-image" src={props.src} alt={props.name} />
+            <div className="product-image-container">
+                <img className="product-image" src={props.src} alt={props.name} />
             </div>
 
-            <div class="product-card-body">
-                <div class="product-name"> {props.name} </div>
+            <div className="product-card-body">
+                <div className="product-name"> {props.name} </div>
 
-                <div class="product-price"> 
-                    <span class="final-price"></span> {props.finalPrice} INR <span class="og-price text-s"><strike> {props.ogPrice} INR </strike></span>
+                <div className="product-price"> 
+                    <span className="final-price"></span> {props.finalPrice} INR <span className="og-price text-s"><strike> {props.ogPrice} INR </strike></span>
                 </div>
 
-                <div class="product-offer"> {props.discount} </div>
+                <div className="product-offer"> {props.discount} </div>
 
-                <div class="product-quantity">Quantity: <span>
+                <div className="product-quantity">Quantity: <span>
                     <button onClick={() => {
 
                         //if the quantity is 1 then removes the product
@@ -47,9 +47,9 @@ export function HorizontalCard(props) {
                     <button onClick={() => updateCartQuantity(token, props.productId, "increment")}>+</button>
                 </span></div>
             
-                <div class="product-action">
-                    <button class="btn btn-yellow" onClick={() => deleteFromCart(token, props.productId)}>Remove from Cart</button>
-                    <button class="btn btn-outline-lightblue" onClick={() => {
+                <div className="product-action">
+                    <button className="btn btn-yellow" onClick={() => deleteFromCart(token, props.productId)}>Remove from Cart</button>
+                    <button className="btn btn-outline-lightblue" onClick={() => {
                         if(productInWishlist(myWishlist, props.productId)) {
                             deleteFromCart(token, props.productId)
                             navigate('/wishlist')
