@@ -22,20 +22,20 @@ export function ProductListing() {
 
             <Navbar />
 
-            <main class="product-listing-page">
+            <main className="product-listing-page">
 
                 <FiltersSidebar />
 
-                <div class="product-listing-area">
+                <div className="product-listing-area">
 
-                    <div class="heading">
+                    <div className="heading">
                         <h4>Showing all products</h4><p>(Showing {filteredProducts.length}  products)</p>
                     </div>
 
-                    <div class="listed-products"> 
+                    <div className="listed-products"> 
 
                         {loading? <p> Loading Products </p> : 
-                            <div class="normal-products">
+                            <div className="normal-products">
                                 {filteredProducts.map((item) => <Card product={item} name={item.name} src={item.src} price={item.finalPrice} rating={item.rating} productId={item._id} likeStatus={ () => productInWishlist(myWishlist, item._id)}/>)}
                             </div> 
                         }

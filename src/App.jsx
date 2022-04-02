@@ -1,5 +1,5 @@
 import "./universalStyles.css"
-import { Homepage, ProductListing, Cart, LogIn, SignUp, Wishlist } from "./pages";
+import { Homepage, ProductListing, Cart, LogIn, SignUp, Wishlist, FourOFourPage } from "./pages";
 import { Route, Routes } from "react-router-dom";
 import ScrollToTop from "./utils/ScrollToTop";
 
@@ -16,6 +16,7 @@ function App() {
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="*" element={<FourOFourPage />} />
         </Routes>
       </ScrollToTop>
 

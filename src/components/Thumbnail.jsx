@@ -3,10 +3,10 @@ import "./thumbnail.css"
 export function Thumbnail(props) {
     return (
         
-        <div class="category" onClick={props.onClick}>
+        <div className="category" onClick={props.onClick}>
             <img src={props.src} alt={props.name} />
-            <div class="fade"></div>
-            <div class="cat-name">{props.name}</div>
+            <div className="fade"></div>
+            <div className="cat-name">{props.name}</div>
         </div>
         
     )

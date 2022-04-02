@@ -13,24 +13,24 @@ export function SignUp() {
         <div className="signup auth">
             <Navbar />
             <main>
-                <div class="sign-up-container">
+                <div className="sign-up-container">
 
                     <form action="" method="post">
-                        <div class="card shadow">
+                        <div className="card shadow">
 
-                            <h3 class="title">Sign Up</h3>
-                            <div class="input-group">
+                            <h3 className="title">Sign Up</h3>
+                            <div className="input-group">
                                 <label for="email">Email address</label>
                                 <input type="email" name="email" id="emailid" placeholder="admin@gozo.com" required/>
                             </div>
-                            <div class="input-group">
+                            <div className="input-group">
                                 <label for="password">Password</label>
                                 <input type="password" name="password" id="password" required/>
                             </div>
-                            <span class="checkbox">
+                            <span className="checkbox">
                                 <input type="checkbox" name="TnC" id="tnc" required />I accept all Terms & Conditions
                             </span>
-                            <button class="btn btn-lightblue">Create New Account</button>
+                            <button className="btn btn-lightblue">Create New Account</button>
                             <Link to="/login"> Already have an account</Link>
                         </div>
                     </form>

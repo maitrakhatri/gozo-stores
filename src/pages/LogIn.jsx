@@ -14,25 +14,25 @@ export function LogIn() {
             <Navbar />
 
             <main>
-                <div class="log-in-container">
+                <div className="log-in-container">
 
                     <form action="" method="post">
-                        <div class="card shadow">
+                        <div className="card shadow">
 
-                            <h3 class="title">Log In</h3>
-                            <div class="input-group">
+                            <h3 className="title">Log In</h3>
+                            <div className="input-group">
                                 <label for="email">Email address</label>
                                 <input type="email" name="email" id="emailid" placeholder="admin@gozo.com" required/>
                             </div>
-                            <div class="input-group">
+                            <div className="input-group">
                                 <label for="password">Password</label>
                                 <input type="password" name="password" id="password" required/>
                             </div>
-                            <div class="login-options">
+                            <div className="login-options">
                                 <input type="checkbox" name="TnC" id="remember-cred" />Remember me <br/>
                                 <span>Forgot your Password?</span>
                             </div>
-                            <button class="btn btn-lightblue">Login</button>
+                            <button className="btn btn-lightblue">Login</button>
                             <Link to="/signup"> Create New account </Link>
                         </div>
                     </form>

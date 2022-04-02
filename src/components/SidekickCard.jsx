@@ -1,17 +1,17 @@
 export function Sidekick(props) {
     return (
         <div className="sidekick-card">
-            <div class="product-card product-horizontal">
+            <div className="product-card product-horizontal">
 
-                <div class="product-image-container">
-                    <img class="product-image img-res" src={props.src} alt="sidekick product" />
+                <div className="product-image-container">
+                    <img className="product-image img-res" src={props.src} alt="sidekick product" />
                 </div>
             
-                <div class="product-card-body text-left">
-                    <span class="product-tag"> NEW ARRIVALS !! </span>
-                    <div class="product-details">
-                        <div class="product-header"> {props.title} </div> <br/>
-                        <div class="product-desc text-s">{props.subtitle}</div>
+                <div className="product-card-body text-left">
+                    <span className="product-tag"> NEW ARRIVALS !! </span>
+                    <div className="product-details">
+                        <div className="product-header"> {props.title} </div> <br/>
+                        <div className="product-desc text-s">{props.subtitle}</div>
                     </div>
                 </div>
             </div>
