@@ -33,12 +33,23 @@ export function Cart() {
               <div className="cart">
                   <div className="cart-item">
 
-                      {myCart.map((product) => <HorizontalCard name={product.name} src={product.src} ogPrice={product.ogPrice} finalPrice={product.finalPrice} quantity={product.qty} productId={product._id} product={product} />)}
+                      {myCart.map((product) => 
+                        <HorizontalCard 
+                            name={product.name} 
+                            src={product.src} 
+                            ogPrice={product.ogPrice} 
+                            finalPrice={product.finalPrice} 
+                            quantity={product.qty} 
+                            productId={product._id} 
+                            product={product} 
+                        />)}
                       
                   </div>
               </div>
               
-              <PlaceOrder totalOGPrice={totalOGPrice} totalFinalPrice={totalFinalPrice} />
+              <PlaceOrder 
+                totalOGPrice={totalOGPrice} 
+                totalFinalPrice={totalFinalPrice} />
           </main>
 
         </div>

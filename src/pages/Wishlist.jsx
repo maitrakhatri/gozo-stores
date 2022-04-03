@@ -23,7 +23,15 @@ export function Wishlist() {
 
                     {myWishlist.map((item) => {
                         return (
-                            <Card product={item} name={item.name} src={item.src} price={item.finalPrice} rating={item.rating} productId={item._id} likeStatus={true} />
+                            <Card 
+                                product={item} 
+                                name={item.name} 
+                                src={item.src} 
+                                price={item.finalPrice} 
+                                rating={item.rating} 
+                                productId={item._id} 
+                                likeStatus={true} 
+                            />
                         )
                     })}
 
