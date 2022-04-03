@@ -36,7 +36,16 @@ export function ProductListing() {
 
                         {loading? <p> Loading Products </p> : 
                             <div className="normal-products">
-                                {filteredProducts.map((item) => <Card product={item} name={item.name} src={item.src} price={item.finalPrice} rating={item.rating} productId={item._id} likeStatus={ () => productInWishlist(myWishlist, item._id)}/>)}
+                                {filteredProducts.map((item) => 
+                                    <Card 
+                                        product={item} 
+                                        name={item.name} 
+                                        src={item.src} 
+                                        price={item.finalPrice} 
+                                        rating={item.rating} 
+                                        productId={item._id} 
+                                        likeStatus={ () => productInWishlist(myWishlist, item._id)}
+                                    />)}
                             </div> 
                         }
                 

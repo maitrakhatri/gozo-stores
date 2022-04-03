@@ -36,7 +36,11 @@ export function Homepage() {
                     <Link to="/products">
 
                         {categories.map((item) => {
-                            return <Thumbnail name={item.name} src={item.src} onClick={() => dispatch({type: "ADD-CAT", payload: item.categoryName, status: true})} />
+                            return (
+                                <Thumbnail 
+                                    name={item.name} 
+                                    src={item.src} 
+                                    onClick={() => dispatch({type: "ADD-CAT", payload: item.categoryName, status: true})} />)
                         })}
                     </Link>
                 </div>
