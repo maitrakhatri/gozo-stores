@@ -1,21 +1,14 @@
-import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useCart } from "../context/cart-context"
 import { useWishlist } from "../context/wishlist-context"
-import {token} from "../utils/token"
 import { Like } from "./Like"
 
 export function Card(props) {
 
-    const {addToCart, myCart} = useCart()
-    const [buttonStatus, setButtonStatus] = useState("Add to Cart")
+    const {productInCart, myCart, cartDispatch} = useCart()
+    const {dispatch, myWishlist, productInWishlist} = useWishlist()
+
     const navigate = useNavigate()
-
-    const productInCart = (myCart, productId) => myCart.some((ele) => ele._id === productId)
-
-    const {addToWishlist, deleteFromWishlist} = useWishlist()
-
-    const [likeStatus, setLikeStatus] = useState(props.likeStatus ?? false)
 
     return (
 
@@ -25,14 +18,12 @@ export function Card(props) {
                 <div className="product-image-container">
                     <img className="product-image" src={props.src} alt={props.name} />
 
-                    <Like active={likeStatus} onClick={() => {
-                        if(likeStatus) {
-                            deleteFromWishlist(token, props.productId)
-                            setLikeStatus(false)
+                    <Like productId={props.productId} onClick={() => {
+                        if(productInWishlist(myWishlist, props.productId)) {
+                            dispatch({type: "DELETE-FROM-WISHLIST", payload: props.productId})
                         }
                         else {
-                            addToWishlist(token, props.product)
-                            setLikeStatus(true)
+                            dispatch({type: "ADD-TO-WISHLIST", payload: props.product})
                         }
                     } } />
                 </div>
@@ -45,15 +36,14 @@ export function Card(props) {
                             //checks if product is already present in Cart
                             //if yes then redirect to CART page
                             //if not then adds product to cart and
-                            //instantly shows GOT TO CART button
+                            //shows GOT TO CART button
                             if(productInCart(myCart, props.productId)) {
                                 navigate('/cart')
                             }
                             else {
-                                addToCart(token, props.product)
-                                setButtonStatus("Go to Cart")
+                                cartDispatch({type: "ADD-TO-CART", payload: props.product})
                             }
-                        }}>{buttonStatus}</button>
+                        }}>{productInCart(myCart, props.productId)? "Go to cart" : "Add to cart"}</button>
                     </div>
                 </div>
             </div>

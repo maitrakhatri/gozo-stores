@@ -1,14 +1,11 @@
-import { token } from "../utils/token"
 import { useCart } from "../context/cart-context"
 import { useWishlist } from "../context/wishlist-context"
 import { useNavigate } from "react-router-dom"
 
 export function HorizontalCard(props) {
 
-    const {deleteFromCart, updateCartQuantity} = useCart()
-    const {addToWishlist, myWishlist} = useWishlist()
-
-    const productInWishlist = (myWishlist, productId) => myWishlist.some((ele) => ele._id === productId)
+    const { cartDispatch } = useCart()
+    const { dispatch, myWishlist, productInWishlist } = useWishlist()
 
     const navigate = useNavigate()
     
@@ -35,28 +32,28 @@ export function HorizontalCard(props) {
                         //if the quantity is 1 then removes the product
                         //instead of showing quantity in 0 or negative number
                         if(props.quantity === 1) {
-                            deleteFromCart(token, props.productId)
+                            cartDispatch({type: "DELETE-FROM-CART", payload: props.productId})
                         }
                         else {
-                            updateCartQuantity(token, props.productId, "decrement")}
+                            cartDispatch({type: "UPDATE-CART-QUANTITY", payload: props.productId, updateType: "decrement"})
                         }
-                    }>-</button> 
+                    }}>-</button> 
 
                     <span>{props.quantity}</span> 
 
-                    <button onClick={() => updateCartQuantity(token, props.productId, "increment")}>+</button>
+                    <button onClick={() => cartDispatch({type: "UPDATE-CART-QUANTITY", payload: props.productId, updateType: "increment"})}>+</button>
                 </span></div>
             
                 <div className="product-action">
-                    <button className="btn btn-yellow" onClick={() => deleteFromCart(token, props.productId)}>Remove from Cart</button>
+                    <button className="btn btn-yellow" onClick={() => cartDispatch({type: "DELETE-FROM-CART", payload: props.productId})}>Remove from Cart</button>
                     <button className="btn btn-outline-lightblue" onClick={() => {
                         if(productInWishlist(myWishlist, props.productId)) {
-                            deleteFromCart(token, props.productId)
+                            cartDispatch({type: "DELETE-FROM-CART", payload: props.productId})
                             navigate('/wishlist')
                         }
                         else {
-                            addToWishlist(token, props.product)
-                            deleteFromCart(token, props.productId)
+                            dispatch({type: "ADD-TO-WISHLIST", payload: props.product})
+                            cartDispatch({type: "DELETE-FROM-CART", payload: props.productId})
                         }
                     }}>Move to Wishlist</button>
                 </div>
