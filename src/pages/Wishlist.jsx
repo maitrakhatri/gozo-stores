@@ -1,6 +1,6 @@
 import "./css/wishlist.css"
 import {Navbar, Card} from "../components"
-import { useWishlist } from "../context/wishlist-context"
+import { useWishlist } from "../context"
 import { useEffect } from "react"
 
 export function Wishlist() {

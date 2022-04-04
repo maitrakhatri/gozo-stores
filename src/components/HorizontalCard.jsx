@@ -1,11 +1,10 @@
-import { useCart } from "../context/cart-context"
-import { useWishlist } from "../context/wishlist-context"
+import { useCart, useWishlist } from "../context"
 import { useNavigate } from "react-router-dom"
 
 export function HorizontalCard(props) {
 
     const { cartDispatch } = useCart()
-    const { dispatch, myWishlist, productInWishlist } = useWishlist()
+    const { wishlistDispatch, myWishlist, productInWishlist } = useWishlist()
 
     const navigate = useNavigate()
     
@@ -52,7 +51,7 @@ export function HorizontalCard(props) {
                             navigate('/wishlist')
                         }
                         else {
-                            dispatch({type: "ADD-TO-WISHLIST", payload: props.product})
+                            wishlistDispatch({type: "ADD-TO-WISHLIST", payload: props.product})
                             cartDispatch({type: "DELETE-FROM-CART", payload: props.productId})
                         }
                     }}>Move to Wishlist</button>

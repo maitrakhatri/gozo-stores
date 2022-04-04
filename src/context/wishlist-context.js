@@ -1,13 +1,13 @@
 import { createContext, useContext, useState, useReducer, useEffect } from "react";
 import axios from "axios";
 import { token } from "../utils/token";
-import { wishlistReducer } from "../reducer/wishlist-reducer";
+import { wishlistReducer } from "../reducer";
 
 const WishlistContext = createContext();
 
-function WishlistProvider({children}) {
+export function WishlistProvider({children}) {
 
-  const [state, dispatch] = useReducer(wishlistReducer, {
+  const [wishlistState, wishlistDispatch] = useReducer(wishlistReducer, {
     product: null,
     productId: null
   })
@@ -51,20 +51,18 @@ function WishlistProvider({children}) {
   const productInWishlist = (myWishlist, productId) => myWishlist.some((ele) => ele._id === productId)
 
   useEffect(() => {
-    addToWishlist(token, state.product)
-  }, [state.product])
+    addToWishlist(token, wishlistState.product)
+  }, [wishlistState.product])
 
   useEffect(() => {
-    deleteFromWishlist(token, state.productId)
-  }, [state.productId])
+    deleteFromWishlist(token, wishlistState.productId)
+  }, [wishlistState.productId])
 
   return (
-      <WishlistContext.Provider value={{ myWishlist, state, dispatch, productInWishlist}}>
+      <WishlistContext.Provider value={{ myWishlist, wishlistDispatch, productInWishlist}}>
           {children}
       </WishlistContext.Provider>
   )
 }
 
-const useWishlist = () => useContext(WishlistContext)
-
-export {useWishlist, WishlistProvider}
+export const useWishlist = () => useContext(WishlistContext)

@@ -1,7 +1,7 @@
 import "./css/homepage.css"
 import axios from "axios"
 import { useEffect, useState } from "react";
-import { useFilter } from "../context/filter-context";
+import { useFilter } from "../context";
 import { Link } from "react-router-dom";
 import { Thumbnail, Navbar, Sidekick } from "../components";
 

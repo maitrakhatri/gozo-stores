@@ -1,11 +1,11 @@
 import { createContext, useContext, useState, useReducer, useEffect } from "react";
 import axios from "axios"
-import { cartReducer } from "../reducer/cart-reducer";
+import { cartReducer } from "../reducer";
 import {token} from "../utils/token"
 
 const CartContext = createContext();
 
-function CartProvider({children}) {
+export function CartProvider({children}) {
 
     const [myCart, setMyCart] = useState([])
 
@@ -66,7 +66,7 @@ function CartProvider({children}) {
 
     const productInCart = (myCart, productId) => myCart.some((ele) => ele._id === productId)
 
-    const [state, cartDispatch] = useReducer(cartReducer, {
+    const [cartState, cartDispatch] = useReducer(cartReducer, {
       product: null,
       productId: null,
       deleteProduct: false,
@@ -77,24 +77,22 @@ function CartProvider({children}) {
     })
 
     useEffect(() => {
-      addToCart(token, state.product)
-    }, [state.adder])
+      addToCart(token, cartState.product)
+    }, [cartState.adder])
 
     useEffect(() => {
-      deleteFromCart(token, state.productId, state.deleteProduct)
-    }, [state.deleter])
+      deleteFromCart(token, cartState.productId, cartState.deleteProduct)
+    }, [cartState.deleter])
 
     useEffect(() => {
-      updateCartQuantity(token, state.productId, state.updateType)
-    }, [state.updater])
+      updateCartQuantity(token, cartState.productId, cartState.updateType)
+    }, [cartState.updater])
 
     return (
-        <CartContext.Provider value={{myCart, cartDispatch, state, productInCart}}>
+        <CartContext.Provider value={{myCart, cartDispatch, productInCart}}>
             {children}
         </CartContext.Provider>
     )
 }
 
-const useCart = () => useContext(CartContext)
-
-export {useCart, CartProvider}
+export const useCart = () => useContext(CartContext)

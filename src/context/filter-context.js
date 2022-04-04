@@ -1,11 +1,11 @@
 import { createContext, useContext, useReducer } from "react";
-import { useProduct } from "./product-context";
+import { useProduct } from "./";
 import {getCatogriedProducts,getRatedProducts, getPricedProducts, getSortedProducts} from "../utils/filters" 
-import { filterReducer } from "../reducer/filter-reducer";
+import { filterReducer } from "../reducer";
 
 const FilterContext = createContext()
 
-const FilterProvider = ({children}) => {
+export const FilterProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(filterReducer, {
         sortBy: "",
@@ -30,6 +30,4 @@ const FilterProvider = ({children}) => {
     )
 }
 
-const useFilter = () => useContext(FilterContext)
-
-export {useFilter, FilterProvider}
+export const useFilter = () => useContext(FilterContext)

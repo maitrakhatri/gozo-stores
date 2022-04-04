@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { useCart } from "../context/cart-context";
-import { useWishlist } from "../context/wishlist-context";
+import { useCart, useWishlist } from "../context"
 
 export function Navbar() {
 

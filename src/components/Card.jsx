@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom"
-import { useCart } from "../context/cart-context"
-import { useWishlist } from "../context/wishlist-context"
+import { useCart, useWishlist } from "../context"
 import { Like } from "./Like"
 
 export function Card(props) {
 
     const {productInCart, myCart, cartDispatch} = useCart()
-    const {dispatch, myWishlist, productInWishlist} = useWishlist()
+    const {wishlistDispatch, myWishlist, productInWishlist} = useWishlist()
 
     const navigate = useNavigate()
 
@@ -20,10 +19,10 @@ export function Card(props) {
 
                     <Like productId={props.productId} onClick={() => {
                         if(productInWishlist(myWishlist, props.productId)) {
-                            dispatch({type: "DELETE-FROM-WISHLIST", payload: props.productId})
+                            wishlistDispatch({type: "DELETE-FROM-WISHLIST", payload: props.productId})
                         }
                         else {
-                            dispatch({type: "ADD-TO-WISHLIST", payload: props.product})
+                            wishlistDispatch({type: "ADD-TO-WISHLIST", payload: props.product})
                         }
                     } } />
                 </div>

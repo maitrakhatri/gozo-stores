@@ -1,41 +1,41 @@
-export const cartReducer = (state, action) => {
+export const cartReducer = (cartState, action) => {
 
     switch(action.type) {
 
         case "ADD-TO-CART":
             return {
-                ...state,
-                ...state.product,
-                ...state.adder,
-                adder: !state.adder,
+                ...cartState,
+                ...cartState.product,
+                ...cartState.adder,
+                adder: !cartState.adder,
                 product: action.payload
             }
         
         case "DELETE-FROM-CART":
             return {
-                ...state,
-                ...state.productId,
-                ...state.deleteProduct,
-                ...state.deleter,
-                deleter: !state.deleter,
+                ...cartState,
+                ...cartState.productId,
+                ...cartState.deleteProduct,
+                ...cartState.deleter,
+                deleter: !cartState.deleter,
                 deleteProduct: true,
                 productId: action.payload
             }
 
         case "UPDATE-CART-QUANTITY":
             return {
-                ...state,
-                ...state.productId,
-                ...state.updateType,
-                ...state.updater,
-                updater: !state.updater,
+                ...cartState,
+                ...cartState.productId,
+                ...cartState.updateType,
+                ...cartState.updater,
+                updater: !cartState.updater,
                 productId: action.payload,
                 updateType: action.updateType
             }
 
         default:
             return {
-                ...state
+                ...cartState
             }
     }
 }

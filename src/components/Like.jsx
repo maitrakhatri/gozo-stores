@@ -1,4 +1,4 @@
-import { useWishlist } from "../context/wishlist-context"
+import { useWishlist } from "../context"
 
 export function Like(props) {
 

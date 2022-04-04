@@ -1,8 +1,6 @@
 import "./css/productListing.css"
-import { useFilter } from "../context/filter-context"
-import { useProduct } from "../context/product-context";
 import { Card, Navbar, FiltersSidebar } from "../components";
-import { useWishlist } from "../context/wishlist-context";
+import { useWishlist, useProduct, useFilter } from "../context"
 import { useEffect } from "react"
 
 export function ProductListing() {

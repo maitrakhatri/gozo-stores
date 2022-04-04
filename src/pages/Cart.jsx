@@ -1,5 +1,5 @@
 import { PlaceOrder, HorizontalCard, Navbar } from "../components"
-import { useCart } from "../context/cart-context"
+import { useCart } from "../context"
 import "./css/cart.css"
 import { useEffect, useState } from "react"
 

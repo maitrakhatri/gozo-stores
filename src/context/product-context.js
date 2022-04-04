@@ -3,7 +3,7 @@ import axios from "axios";
 
 const ProductContext = createContext();
 
-function ProductProvider({children}) {
+export function ProductProvider({children}) {
 
     const [products, setProducts] = useState([])
 
@@ -31,6 +31,4 @@ function ProductProvider({children}) {
     )
 }
 
-const useProduct = () => useContext(ProductContext);
-
-export {useProduct, ProductProvider}
+export const useProduct = () => useContext(ProductContext);
