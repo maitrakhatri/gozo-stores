@@ -56,8 +56,10 @@ function CartProvider({children}) {
       }
     }
 
+    const productInCart = (myCart, productId) => myCart.some((ele) => ele._id === productId)
+
     return (
-        <CartContext.Provider value={{myCart, deleteFromCart, addToCart, updateCartQuantity}}>
+        <CartContext.Provider value={{myCart, deleteFromCart, addToCart, updateCartQuantity, productInCart}}>
             {children}
         </CartContext.Provider>
     )
