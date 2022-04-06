@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom"
 export function HorizontalCard(props) {
 
     const {deleteFromCart, updateCartQuantity} = useCart()
-    const {addToWishlist, myWishlist} = useWishlist()
+    const {addToWishlist, myWishlist, productInWishlist} = useWishlist()
 
-    const productInWishlist = (myWishlist, productId) => myWishlist.some((ele) => ele._id === productId)
+    const thisInWishlist = productInWishlist(myWishlist, props.productId)
 
     const navigate = useNavigate()
     
@@ -50,7 +50,7 @@ export function HorizontalCard(props) {
                 <div className="product-action">
                     <button className="btn btn-yellow" onClick={() => deleteFromCart(token, props.productId)}>Remove from Cart</button>
                     <button className="btn btn-outline-lightblue" onClick={() => {
-                        if(productInWishlist(myWishlist, props.productId)) {
+                        if(thisInWishlist) {
                             deleteFromCart(token, props.productId)
                             navigate('/wishlist')
                         }

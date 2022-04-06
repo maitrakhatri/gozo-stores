@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useCart } from "../context/cart-context"
 import { useWishlist } from "../context/wishlist-context"
@@ -8,14 +7,14 @@ import { Like } from "./Like"
 export function Card(props) {
 
     const {addToCart, myCart} = useCart()
-    const [buttonStatus, setButtonStatus] = useState("Add to Cart")
     const navigate = useNavigate()
 
-    const productInCart = (myCart, productId) => myCart.some((ele) => ele._id === productId)
+    const {addToWishlist, deleteFromWishlist, myWishlist, productInWishlist} = useWishlist()
 
-    const {addToWishlist, deleteFromWishlist} = useWishlist()
+    const {productInCart} = useCart()
 
-    const [likeStatus, setLikeStatus] = useState(props.likeStatus ?? false)
+    const thisInWishlist = productInWishlist(myWishlist, props.productId)
+    const thisInCart = productInCart(myCart, props.productId)
 
     return (
 
@@ -25,14 +24,13 @@ export function Card(props) {
                 <div className="product-image-container">
                     <img className="product-image" src={props.src} alt={props.name} />
 
-                    <Like active={likeStatus} onClick={() => {
-                        if(likeStatus) {
+                    <Like active={thisInWishlist}  onClick={() => {
+
+                        if(thisInWishlist) {
                             deleteFromWishlist(token, props.productId)
-                            setLikeStatus(false)
                         }
                         else {
                             addToWishlist(token, props.product)
-                            setLikeStatus(true)
                         }
                     } } />
                 </div>
@@ -46,14 +44,13 @@ export function Card(props) {
                             //if yes then redirect to CART page
                             //if not then adds product to cart and
                             //instantly shows GOT TO CART button
-                            if(productInCart(myCart, props.productId)) {
+                            if(thisInCart) {
                                 navigate('/cart')
                             }
                             else {
                                 addToCart(token, props.product)
-                                setButtonStatus("Go to Cart")
                             }
-                        }}>{buttonStatus}</button>
+                        }}>{thisInCart ? "Go to Cart" : "Add to Cart"}</button>
                     </div>
                 </div>
             </div>
