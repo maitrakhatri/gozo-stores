@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { useCart } from "../context/cart-context";
-import { useWishlist } from "../context/wishlist-context";
+import { useAuth, useCart, useWishlist } from "../context";
 
 export function Navbar() {
 
     const {myCart} = useCart()
     const {myWishlist} = useWishlist()
+    const { isLoggedIn, logOutHandler } = useAuth()
 
     return (
         <div className="Navbar">
@@ -33,7 +33,8 @@ export function Navbar() {
                         <span className="badge bg-lightblue">{myCart.length}</span>
                         </Link>
                     </div>
-                    <Link to="/login" ><button className="btn btn-lightblue">Log In</button> </Link>
+                    {isLoggedIn? <Link to="/" ><button className="btn btn-lightblue" onClick={() => { logOutHandler() }}>Log Out</button> </Link> : <Link to="/login" ><button className="btn btn-lightblue">Log In</button> </Link> }
+                    
                 </div>
             </nav>
         </div>

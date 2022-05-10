@@ -1,24 +1,33 @@
 import { createContext, useContext, useState } from "react";
 import axios from "axios"
+import { useAuth } from "./index";
+import { useNavigate } from "react-router-dom"
 
 const CartContext = createContext();
 
 function CartProvider({children}) {
 
-    const [myCart, setMyCart] = useState([])
+    const [myCart, setMyCart] = useState([]);
+    const { isLoggedIn } = useAuth();
+    const navigate = useNavigate();
 
     const addToCart = async (token, product) => {
-      try {
-        const res = await axios.post('/api/user/cart', {product}, {
-          headers: {
-            authorization: token
-          }
-        })
-        setMyCart(res.data.cart)
+      if(isLoggedIn) {
+        try {
+          const res = await axios.post('/api/user/cart', {product}, {
+            headers: {
+              authorization: token
+            }
+          })
+          setMyCart(res.data.cart)
+        }
+    
+        catch(err) {
+          console.log(err)
+        }
       }
-  
-      catch(err) {
-        console.log(err)
+      else {
+        navigate('/login')
       }
     }
 

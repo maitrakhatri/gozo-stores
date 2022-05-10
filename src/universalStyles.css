@@ -114,3 +114,15 @@ body {
 h5.text-center {
     font-weight: 400;
 }
+
+.login button {
+    margin-bottom: 1rem;
+}
+
+.alert {
+    width: fit-content;
+    position: absolute;
+    top: 5rem;
+    right: 2rem;
+    border-bottom: 5px solid var(--text-gray);
+}
