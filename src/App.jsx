@@ -1,6 +1,6 @@
 import "./universalStyles.css"
 import { Homepage, ProductListing, Cart, LogIn, SignUp, Wishlist, FourOFourPage } from "./pages";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import ScrollToTop from "./utils/ScrollToTop";
 import { RequiresAuth } from "./context/requires-auth";
 import { LoggedIn } from "./context/loggedIn";
@@ -17,7 +17,7 @@ function App() {
     if(token !== null) {
       setIsLoggedIn(true);
     }
-  }, [token, isLoggedIn]) 
+  }, [token, isLoggedIn, setToken, setIsLoggedIn]) 
 
   return (
     <div className="App">
@@ -47,4 +47,3 @@ function App() {
 }
 
 export default App;
-// render

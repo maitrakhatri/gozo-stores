@@ -10,7 +10,7 @@ export function SignUp() {
         document.title = "SignUp | gozo Stores";
     },[])
 
-    const { dispatch, signupHandler, state } = useAuth();
+    const { dispatch, signupHandler } = useAuth();
 
     return(
         <div className="signup auth">
