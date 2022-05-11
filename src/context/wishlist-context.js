@@ -1,13 +1,18 @@
 import { createContext, useContext, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"
+import { useAuth } from "./index";
 
 const WishlistContext = createContext();
 
 function WishlistProvider({children}) {
 
   const [myWishlist, setMyWishlist] = useState([])
+  const { isLoggedIn } = useAuth();
+  const navigate = useNavigate()
 
   const addToWishlist = async (token, product) => {
+    if(isLoggedIn) {
       try {
         const res = await axios.post('api/user/wishlist', {product}, {
           headers: {
@@ -20,6 +25,10 @@ function WishlistProvider({children}) {
       catch(err) {
         console.log(err)
       }
+    }
+    else {
+      navigate('/login')
+    }
   }
 
   const deleteFromWishlist = async (token, productId) => {

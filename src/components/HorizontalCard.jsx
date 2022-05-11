@@ -1,6 +1,4 @@
-import { token } from "../utils/token"
-import { useCart } from "../context/cart-context"
-import { useWishlist } from "../context/wishlist-context"
+import { useCart, useWishlist, useToken } from "../context"
 import { useNavigate } from "react-router-dom"
 
 export function HorizontalCard(props) {
@@ -11,6 +9,8 @@ export function HorizontalCard(props) {
     const thisInWishlist = productInWishlist(myWishlist, props.productId)
 
     const navigate = useNavigate()
+
+    const { token } = useToken()
     
     return (
 

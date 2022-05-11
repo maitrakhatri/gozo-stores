@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import { useProduct } from "./product-context";
+import { useProduct } from "./index";
 import {getCatogriedProducts,getRatedProducts, getPricedProducts, getSortedProducts} from "../utils/filters" 
 import { filterReducer } from "../reducer/filter-reducer";
 
