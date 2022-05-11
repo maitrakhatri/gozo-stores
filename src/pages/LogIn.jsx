@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../components";
+import { Navbar, Toast } from "../components";
 import "./css/auth.css"
 import { useEffect } from "react"
+import { useAuth } from "../context";
 
 export function LogIn() {
 
@@ -9,10 +10,12 @@ export function LogIn() {
         document.title = "LogIn | gozo Stores";
     },[])
 
+    const { dispatch, logInHandler, state, guestCred, newAcc, showToast } = useAuth();
+
     return (
         <div className="login auth">
+            {(newAcc && showToast) && <Toast title="New account created !! Login to continue" />}
             <Navbar />
-
             <main>
                 <div className="log-in-container">
 
@@ -22,17 +25,22 @@ export function LogIn() {
                             <h3 className="title">Log In</h3>
                             <div className="input-group">
                                 <label for="email">Email address</label>
-                                <input type="email" name="email" id="emailid" placeholder="admin@gozo.com" required/>
+                                <input type="email" name="email" id="emailid" placeholder="maitrakhatri@gozo.com" value={state.email} required onChange={(e) => dispatch({type: "EMAIL", payload: e.target.value})}/>
                             </div>
                             <div className="input-group">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" id="password" required/>
+                                <input type="password" name="password" id="password" value={state.password} required onChange={(e) => dispatch({type: "PASS", payload: e.target.value})}/>
                             </div>
-                            <div className="login-options">
+                            {/* <div className="login-options">
                                 <input type="checkbox" name="TnC" id="remember-cred" />Remember me <br/>
                                 <span>Forgot your Password?</span>
-                            </div>
-                            <button className="btn btn-lightblue">Login</button>
+                            </div> */}
+                            <button className="btn btn-lightblue" onClick={(e) => logInHandler(e)}>Login</button>
+                            <button className="btn btn-green" onClick={(e) => {
+                                guestCred(e); 
+                                dispatch({type: "GUEST-CRED"})
+                            }
+                                }>Use guest credentials</button>
                             <Link to="/signup"> Create New account </Link>
                         </div>
                     </form>

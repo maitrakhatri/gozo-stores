@@ -1,8 +1,6 @@
 import "./css/productListing.css"
-import { useFilter } from "../context/filter-context"
-import { useProduct } from "../context/product-context";
-import { Card, Navbar, FiltersSidebar } from "../components";
-import { useWishlist } from "../context/wishlist-context";
+import { useFilter, useProduct, useWishlist, useAuth } from "../context"
+import { Card, Navbar, FiltersSidebar, Toast } from "../components";
 import { useEffect } from "react"
 
 export function ProductListing() {
@@ -10,6 +8,7 @@ export function ProductListing() {
     const {loading} = useProduct()
     const {filteredProducts} = useFilter()
     const {myWishlist} = useWishlist()
+    const { showToast } = useAuth()
 
     const productInWishlist = (myWishlist, productId) => myWishlist.some((ele) => ele._id === productId)
 
@@ -21,6 +20,7 @@ export function ProductListing() {
         <div className="productListingPage">
 
             <Navbar />
+            {showToast && <Toast title="Logged In successfully !!" />}
 
             <main className="product-listing-page">
 

@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom"
-import { useCart } from "../context/cart-context"
-import { useWishlist } from "../context/wishlist-context"
-import {token} from "../utils/token"
-import { Like } from "./Like"
+import { useCart, useToken, useWishlist } from "../context"
+import { Like } from "./index"
 
 export function Card(props) {
 
     const {addToCart, myCart} = useCart()
     const navigate = useNavigate()
+    const { token } = useToken()
 
     const {addToWishlist, deleteFromWishlist, myWishlist, productInWishlist} = useWishlist()
 

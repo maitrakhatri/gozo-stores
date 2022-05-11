@@ -3,11 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
-import { ProductProvider } from "./context/product-context";
-import { FilterProvider } from "./context/filter-context";
-import {BrowserRouter} from "react-router-dom"
-import { CartProvider } from "./context/cart-context";
-import { WishlistProvider } from "./context/wishlist-context";
+import { ProductProvider, FilterProvider, CartProvider, WishlistProvider, AuthProvider, TokenProvider } from "./context";
+import { BrowserRouter } from "react-router-dom"
 
 // Call make Server
 makeServer();
@@ -15,15 +12,19 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ProductProvider>
-        <FilterProvider>
-          <CartProvider>
-            <WishlistProvider>
-              <App />
-            </WishlistProvider>
-          </CartProvider>
-        </FilterProvider>
-      </ProductProvider>
+      <TokenProvider>
+        <AuthProvider>
+          <ProductProvider>
+            <FilterProvider>
+              <CartProvider>
+                <WishlistProvider>
+                  <App />
+                </WishlistProvider>
+              </CartProvider>
+            </FilterProvider>
+          </ProductProvider>
+        </AuthProvider>
+      </TokenProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
