@@ -10,7 +10,7 @@ export function LogIn() {
         document.title = "LogIn | gozo Stores";
     },[])
 
-    const { dispatch, logInHandler, state, guestCred, newAcc, showToast } = useAuth();
+    const { dispatch, logInHandler, state, guestCred, newAcc, showToast, errorInLogin } = useAuth();
 
     return (
         <div className="login auth">
@@ -23,18 +23,23 @@ export function LogIn() {
                         <div className="card shadow">
 
                             <h3 className="title">Log In</h3>
-                            <div className="input-group">
+                            <div className="input-group ">
                                 <label for="email">Email address</label>
-                                <input type="email" name="email" id="emailid" placeholder="maitrakhatri@gozo.com" value={state.email} required onChange={(e) => dispatch({type: "EMAIL", payload: e.target.value})}/>
+                                <input className={errorInLogin.status && "outline-red"} type="email" name="email" id="emailid" placeholder="maitrakhatri@gozo.com" value={state.email} required onChange={(e) => dispatch({type: "EMAIL", payload: e.target.value})}/>
                             </div>
                             <div className="input-group">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" id="password" value={state.password} required onChange={(e) => dispatch({type: "PASS", payload: e.target.value})}/>
+                                <input className={errorInLogin.status && "outline-red"} type="password" name="password" id="password" value={state.password} required onChange={(e) => dispatch({type: "PASS", payload: e.target.value})}/>
                             </div>
                             {/* <div className="login-options">
                                 <input type="checkbox" name="TnC" id="remember-cred" />Remember me <br/>
                                 <span>Forgot your Password?</span>
                             </div> */}
+
+                            {errorInLogin.status && <div className="error-message text-red">
+                                <b><p>{errorInLogin.message}</p></b><br />
+                            </div> }
+
                             <button className="btn btn-lightblue" onClick={(e) => logInHandler(e)}>Login</button>
                             <button className="btn btn-green" onClick={(e) => {
                                 guestCred(e); 
