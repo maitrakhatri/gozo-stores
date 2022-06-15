@@ -2,10 +2,17 @@
 E-commerce platform for Superhero fans for Premium Movie Posters.
 > gozo Stores is powered by [gozo-UI](https://github.com/maitrakhatri/gozo-UI)
 # Functionalities
+- Auth (Create new account, log in)
 - Filter products by Category, Rating, Price Range. Sorting by Price
 - Wishlist Management
 - Cart Management
 # Features
+- Not logged in and navigating to wishlist/cart or adding products to cart/wishlist will `redirect` you to Log In page
+- And once logged in user will redirected to the same page that they came form/wanted to go originally
+- Logged in and navigating to Log In/Sign Up page will `redirect` to homepage
+- Loging in and signing up will followed up by `TOAST` with info
+- While logging in if Email not found or Password does not match, it shows the respective error
+- Once logged in, user stays logged in even if you refresh, close the window or the browser
 - Clicking on categories from homepage, shows prodiucts from that category only
 - Clicking on Hero Product and New Arrivals redirects to Product Listing Page
 - Standard filters : sort by price, categories checkbox, rating, price range
@@ -31,4 +38,7 @@ E-commerce platform for Superhero fans for Premium Movie Posters.
 ## Cart Page
 ![Screenshot 2022-03-31 at 22-29-58 Cart gozo Stores](https://user-images.githubusercontent.com/54719132/161124436-d4c2c74d-fb72-4320-bb26-8ef61e9061ea.png)
 # Demo
+## Auth
+https://user-images.githubusercontent.com/54719132/173874343-9929925f-b0ce-40b8-9d46-2ddaa371302e.mp4
+
 https://user-images.githubusercontent.com/54719132/161125445-6b2f3fdb-3fc0-49de-a45b-a589cf3ddd61.mp4
