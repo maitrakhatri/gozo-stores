@@ -1,14 +1,15 @@
 import "./css/homepage.css"
 import axios from "axios"
 import { useEffect, useState } from "react";
-import { useFilter } from "../context/filter-context";
+import { useFilter, useAuth } from "../context";
 import { Link } from "react-router-dom";
-import { Thumbnail, Navbar, Sidekick } from "../components";
+import { Thumbnail, Navbar, Sidekick, Toast } from "../components";
 
 export function Homepage() {
 
     const [categories, setCategories] = useState([])
     const {dispatch} = useFilter()
+    const { showToast } = useAuth()
 
     const getCategories = async () => {
         const res = await axios.get('/api/categories');
@@ -28,7 +29,7 @@ export function Homepage() {
         <div className="homepage">
 
             <Navbar />
-
+            {showToast && <Toast title="Logged In successfully !!" />}
             <main>
                 <h5 className="text-center">You're one stop solution to Premium Superhero Posters</h5>
                 <div className="cat-catlog">

@@ -1,11 +1,13 @@
-import { PlaceOrder, HorizontalCard, Navbar } from "../components"
-import { useCart } from "../context/cart-context"
+import { PlaceOrder, HorizontalCard, Navbar, Toast } from "../components"
+import { useCart, useAuth } from "../context"
 import "./css/cart.css"
 import { useEffect, useState } from "react"
 
 export function Cart() {
 
-  const { myCart } = useCart()
+  const { myCart } = useCart();
+
+  const {showToast} = useAuth()
 
     //Price calculations for PLACE ORDER/BILL section
     const [totalFinalPrice, setTotalFinalPrice] = useState(0)
@@ -27,6 +29,7 @@ export function Cart() {
         <div className="cart-page">
 
           <Navbar />
+          {showToast && <Toast title="Logged In successfully !!" />}
 
           <h1 className="text-center">My Cart</h1>
           <main>
