@@ -3,7 +3,7 @@ export const filterReducer = (state, action) => {
         case "PRICE-RANGE":
             return {
                 ...state,
-                ...state.priceRange,
+                // ...state.priceRange,
                 priceRange: action.payload
             }
 
@@ -13,7 +13,7 @@ export const filterReducer = (state, action) => {
                 newCatArr.push(action.payload)
                 return {
                     ...state,
-                    ...state.categories,
+                    // ...state.categories,
                     categories: [...new Set(newCatArr)]
                 }
             }
@@ -21,7 +21,7 @@ export const filterReducer = (state, action) => {
                 const newCatArr = state.categories.filter((item) => item !== action.payload)
                 return {
                     ...state,
-                    ...state.categories,
+                    // ...state.categories,
                     categories: [...new Set(newCatArr)]
                 }
             }
@@ -29,14 +29,14 @@ export const filterReducer = (state, action) => {
         case "RATING":
             return {
                 ...state,
-                ...state.rating,
+                // ...state.rating,
                 rating: action.payload
             }
 
         case "SORT":
             return {
                 ...state,
-                ...state.sortBy,
+                // ...state.sortBy,
                 sortBy: action.payload
             }
 
